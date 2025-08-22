@@ -20,6 +20,23 @@
     }
     .button:hover { background-color: #005ea0; }
   </style>
+
+  <script>
+    // Simple PIN protection (for demo purposes only)
+    (function () {
+      var ok = false;
+      var tries = 0;
+      var maxTries = 3;
+      while (!ok && tries < maxTries) {
+        var pass = prompt("Enter the ODS PIN to continue:");
+        if (pass === "69505801") { ok = true; break; }
+        tries++;
+      }
+      if (!ok) {
+        document.documentElement.innerHTML = "<head><title>Access denied</title></head><body><h2 style='font-family:Arial;text-align:center;margin-top:60px;'>Access denied</h2></body>";
+      }
+    })();
+  </script>
 </head>
 <body>
   <img src="SERV Profile Logo.png" alt="ODS Logo" class="logo">
@@ -31,6 +48,12 @@
   <a class="button" href="https://dl.ninjarmm.com/agent/oklahoma_installer.exe">Oklahoma</a>
   <a class="button" href="https://dl.ninjarmm.com/agent/texas_installer.exe">Texas</a>
   <a class="button" href="https://dl.ninjarmm.com/agent/generic_installer.exe">Remote</a>
+
+  <p style="margin-top:40px;font-size:20px;color:#555;">
+    Need help? Contact ODS IT Support at techsupport@onsitedealersolutions.com or by phone: 913-871-4220
+  </p>
+</body>
+</html>
 
   <p style="margin-top:40px;font-size:20px;color:#555;">
     Need help? Contact ODS IT Support at techsupport@onsitedealersolutions.com or by phone: 913-871-4220
